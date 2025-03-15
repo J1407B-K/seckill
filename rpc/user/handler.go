@@ -17,16 +17,6 @@ type UserServiceImpl struct {
 
 // Register implements the UserServiceImpl interface.
 func (s *UserServiceImpl) Register(ctx context.Context, req *user.RegisterReq) (resp *user.RegisterResp, err error) {
-	if req.Email != nil {
-		return &user.RegisterResp{
-			Resp: &common.Resp{
-				Code: 0,
-				Msg:  "ok",
-				Data: req.Username + *req.Email,
-			},
-		}, nil
-	}
-
 	req.Password, err = hash.HashedLock(req.Password)
 	if err != nil {
 		log.Println(err)

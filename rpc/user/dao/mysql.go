@@ -7,12 +7,15 @@ import (
 )
 
 func SaveUser(db *gorm.DB, req *user.RegisterReq) error {
-	var user model.User
+	// 创建用户
+	u := model.User{
+		Username: req.Username,
+		Password: req.Password,
+		Email:    req.Email,
+	}
 
-	user.Username = req.Username
-	user.Password = req.Password
-	user.Email = req.Email
-
-	db.Create(&user)
+	if err := db.Create(&u).Error; err != nil {
+		return err
+	}
 	return nil
 }

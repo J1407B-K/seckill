@@ -7,12 +7,19 @@ import (
 	"log"
 	"net"
 	user "seckill/idl/kitex_gen/user/userservice"
-	"seckill/rpc/user/init"
+	"seckill/rpc/user/flag"
+	"seckill/rpc/user/initialize"
 )
 
 func main() {
-	init.SetupViper()
-	db := init.InitGormDB()
+	initialize.SetupViper()
+	db := initialize.InitGormDB()
+
+	option := flag.Parse()
+	ok := flag.DBOption(db, option)
+	if !ok {
+		log.Println("未自动建表")
+	}
 
 	r, err := etcd.NewEtcdRegistry([]string{"127.0.0.1:2379"})
 	if err != nil {
