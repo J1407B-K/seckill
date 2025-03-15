@@ -1,6 +1,1462 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="GoORMHelperCache">
+    <option name="schemaMapping">
+      <map>
+        <entry key="Client">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/model/model.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Clients">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/model/clients.go" />
+              <option value="file://$PROJECT_DIR$/model/model.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LoginReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/user/user.go" />
+              <option value="file://$PROJECT_DIR$/service/user/kitex_gen/user/user.go" />
+              <option value="file://$PROJECT_DIR$/service/user_service/kitex_gen/user/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="LoginResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/user/user.go" />
+              <option value="file://$PROJECT_DIR$/service/user/kitex_gen/user/user.go" />
+              <option value="file://$PROJECT_DIR$/service/user_service/kitex_gen/user/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Order">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/order/order.go" />
+              <option value="file://$PROJECT_DIR$/service/order/kitex_gen/order/order.go" />
+              <option value="file://$PROJECT_DIR$/service/order_service/kitex_gen/order/order.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OrderQueryReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/service/order/kitex_gen/order/order.go" />
+              <option value="file://$PROJECT_DIR$/service/order_service/kitex_gen/order/order.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OrderQueryRequest">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/order/order.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OrderQueryResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/service/order/kitex_gen/order/order.go" />
+              <option value="file://$PROJECT_DIR$/service/order_service/kitex_gen/order/order.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OrderQueryResponse">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/order/order.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OrderReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/order/order.go" />
+              <option value="file://$PROJECT_DIR$/service/order/kitex_gen/order/order.go" />
+              <option value="file://$PROJECT_DIR$/service/order_service/kitex_gen/order/order.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OrderResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/order/order.go" />
+              <option value="file://$PROJECT_DIR$/service/order/kitex_gen/order/order.go" />
+              <option value="file://$PROJECT_DIR$/service/order_service/kitex_gen/order/order.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OrderServiceCreateOrderArgs">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/order/order.go" />
+              <option value="file://$PROJECT_DIR$/service/order/kitex_gen/order/order.go" />
+              <option value="file://$PROJECT_DIR$/service/order_service/kitex_gen/order/order.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OrderServiceCreateOrderResult">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/order/order.go" />
+              <option value="file://$PROJECT_DIR$/service/order/kitex_gen/order/order.go" />
+              <option value="file://$PROJECT_DIR$/service/order_service/kitex_gen/order/order.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OrderServiceImpl">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/rpc/order/handler.go" />
+              <option value="file://$PROJECT_DIR$/service/order/handler.go" />
+              <option value="file://$PROJECT_DIR$/service/order_service/handler.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OrderServiceQueryOrderArgs">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/order/order.go" />
+              <option value="file://$PROJECT_DIR$/service/order/kitex_gen/order/order.go" />
+              <option value="file://$PROJECT_DIR$/service/order_service/kitex_gen/order/order.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="OrderServiceQueryOrderResult">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/order/order.go" />
+              <option value="file://$PROJECT_DIR$/service/order/kitex_gen/order/order.go" />
+              <option value="file://$PROJECT_DIR$/service/order_service/kitex_gen/order/order.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RegisterReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/user/user.go" />
+              <option value="file://$PROJECT_DIR$/service/user/kitex_gen/user/user.go" />
+              <option value="file://$PROJECT_DIR$/service/user_service/kitex_gen/user/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RegisterResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/user/user.go" />
+              <option value="file://$PROJECT_DIR$/service/user/kitex_gen/user/user.go" />
+              <option value="file://$PROJECT_DIR$/service/user_service/kitex_gen/user/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Resp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/common/common.go" />
+              <option value="file://$PROJECT_DIR$/service/order/kitex_gen/common/common.go" />
+              <option value="file://$PROJECT_DIR$/service/order_service/kitex_gen/common/common.go" />
+              <option value="file://$PROJECT_DIR$/service/stock/kitex_gen/common/common.go" />
+              <option value="file://$PROJECT_DIR$/service/stock_service/kitex_gen/common/common.go" />
+              <option value="file://$PROJECT_DIR$/service/user/kitex_gen/common/common.go" />
+              <option value="file://$PROJECT_DIR$/service/user_service/kitex_gen/common/common.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Response">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/model/resp.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="StockReq">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/stock/stock.go" />
+              <option value="file://$PROJECT_DIR$/service/stock/kitex_gen/stock/stock.go" />
+              <option value="file://$PROJECT_DIR$/service/stock_service/kitex_gen/stock/stock.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="StockResp">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/stock/stock.go" />
+              <option value="file://$PROJECT_DIR$/service/stock/kitex_gen/stock/stock.go" />
+              <option value="file://$PROJECT_DIR$/service/stock_service/kitex_gen/stock/stock.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="StockServiceImpl">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/rpc/stock/handler.go" />
+              <option value="file://$PROJECT_DIR$/service/stock/handler.go" />
+              <option value="file://$PROJECT_DIR$/service/stock_service/handler.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="StockServicePreDeductStockArgs">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/stock/stock.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="StockServicePreDeductStockResult">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/stock/stock.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="StockServiceProDeductStockArgs">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/service/stock/kitex_gen/stock/stock.go" />
+              <option value="file://$PROJECT_DIR$/service/stock_service/kitex_gen/stock/stock.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="StockServiceProDeductStockResult">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/service/stock/kitex_gen/stock/stock.go" />
+              <option value="file://$PROJECT_DIR$/service/stock_service/kitex_gen/stock/stock.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="StockServiceQueryStockArgs">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/stock/stock.go" />
+              <option value="file://$PROJECT_DIR$/service/stock/kitex_gen/stock/stock.go" />
+              <option value="file://$PROJECT_DIR$/service/stock_service/kitex_gen/stock/stock.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="StockServiceQueryStockResult">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/stock/stock.go" />
+              <option value="file://$PROJECT_DIR$/service/stock/kitex_gen/stock/stock.go" />
+              <option value="file://$PROJECT_DIR$/service/stock_service/kitex_gen/stock/stock.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="StockServiceRollCallBackStockArgs">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/service/stock/kitex_gen/stock/stock.go" />
+              <option value="file://$PROJECT_DIR$/service/stock_service/kitex_gen/stock/stock.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="StockServiceRollCallBackStockResult">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/service/stock/kitex_gen/stock/stock.go" />
+              <option value="file://$PROJECT_DIR$/service/stock_service/kitex_gen/stock/stock.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="StockServiceRollbackStockArgs">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/stock/stock.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="StockServiceRollbackStockResult">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/stock/stock.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/model/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserServiceImpl">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/rpc/user/handler.go" />
+              <option value="file://$PROJECT_DIR$/service/user/handler.go" />
+              <option value="file://$PROJECT_DIR$/service/user_service/handler.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserServiceLoginArgs">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/user/user.go" />
+              <option value="file://$PROJECT_DIR$/service/user/kitex_gen/user/user.go" />
+              <option value="file://$PROJECT_DIR$/service/user_service/kitex_gen/user/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserServiceLoginResult">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/user/user.go" />
+              <option value="file://$PROJECT_DIR$/service/user/kitex_gen/user/user.go" />
+              <option value="file://$PROJECT_DIR$/service/user_service/kitex_gen/user/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserServiceRegisterArgs">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/user/user.go" />
+              <option value="file://$PROJECT_DIR$/service/user/kitex_gen/user/user.go" />
+              <option value="file://$PROJECT_DIR$/service/user_service/kitex_gen/user/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="UserServiceRegisterResult">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/user/user.go" />
+              <option value="file://$PROJECT_DIR$/service/user/kitex_gen/user/user.go" />
+              <option value="file://$PROJECT_DIR$/service/user_service/kitex_gen/user/user.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="kClient">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/order/orderservice/orderservice.go" />
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/stock/stockservice/stockservice.go" />
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/user/userservice/userservice.go" />
+              <option value="file://$PROJECT_DIR$/service/order/kitex_gen/order/orderservice/orderservice.go" />
+              <option value="file://$PROJECT_DIR$/service/order_service/kitex_gen/order/orderservice/orderservice.go" />
+              <option value="file://$PROJECT_DIR$/service/stock/kitex_gen/stock/stockservice/stockservice.go" />
+              <option value="file://$PROJECT_DIR$/service/stock_service/kitex_gen/stock/stockservice/stockservice.go" />
+              <option value="file://$PROJECT_DIR$/service/user/kitex_gen/user/userservice/userservice.go" />
+              <option value="file://$PROJECT_DIR$/service/user_service/kitex_gen/user/userservice/userservice.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="kOrderServiceClient">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/order/orderservice/client.go" />
+              <option value="file://$PROJECT_DIR$/service/order/kitex_gen/order/orderservice/client.go" />
+              <option value="file://$PROJECT_DIR$/service/order_service/kitex_gen/order/orderservice/client.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="kStockServiceClient">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/stock/stockservice/client.go" />
+              <option value="file://$PROJECT_DIR$/service/stock/kitex_gen/stock/stockservice/client.go" />
+              <option value="file://$PROJECT_DIR$/service/stock_service/kitex_gen/stock/stockservice/client.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="kUserServiceClient">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/user/userservice/client.go" />
+              <option value="file://$PROJECT_DIR$/service/user/kitex_gen/user/userservice/client.go" />
+              <option value="file://$PROJECT_DIR$/service/user_service/kitex_gen/user/userservice/client.go" />
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="scannedPathMapping">
+      <map>
+        <entry key="file://$PROJECT_DIR$/api/api.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742015815217" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/cmd/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742015820557" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/func/handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741974418244" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/global/global.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742015602746" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/handler/handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741975988254" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/common/common.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741973189348" />
+              <option name="schema">
+                <list>
+                  <option value="Resp" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/common/k-common.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741973189354" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/common/k-consts.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741973189354" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/order/k-consts.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741972540126" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/order/k-order.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741972540130" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/order/order.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741972540123" />
+              <option name="schema">
+                <list>
+                  <option value="OrderReq" />
+                  <option value="OrderResp" />
+                  <option value="OrderQueryRequest" />
+                  <option value="OrderQueryResponse" />
+                  <option value="Order" />
+                  <option value="OrderServiceCreateOrderArgs" />
+                  <option value="OrderServiceCreateOrderResult" />
+                  <option value="OrderServiceQueryOrderArgs" />
+                  <option value="OrderServiceQueryOrderResult" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/order/orderservice/client.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741972540124" />
+              <option name="schema">
+                <list>
+                  <option value="kOrderServiceClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/order/orderservice/orderservice.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741972540125" />
+              <option name="schema">
+                <list>
+                  <option value="kClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/order/orderservice/server.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741972540125" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/stock/k-consts.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741972534268" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/stock/k-stock.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741972534271" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/stock/stock.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741972534266" />
+              <option name="schema">
+                <list>
+                  <option value="StockReq" />
+                  <option value="StockResp" />
+                  <option value="StockServiceQueryStockArgs" />
+                  <option value="StockServiceQueryStockResult" />
+                  <option value="StockServicePreDeductStockArgs" />
+                  <option value="StockServicePreDeductStockResult" />
+                  <option value="StockServiceRollbackStockArgs" />
+                  <option value="StockServiceRollbackStockResult" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/stock/stockservice/client.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741972534267" />
+              <option name="schema">
+                <list>
+                  <option value="kStockServiceClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/stock/stockservice/server.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741972534267" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/stock/stockservice/stockservice.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741972534268" />
+              <option name="schema">
+                <list>
+                  <option value="kClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/user/k-consts.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741973189354" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/user/k-user.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741973189358" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/user/user.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741973189352" />
+              <option name="schema">
+                <list>
+                  <option value="RegisterReq" />
+                  <option value="RegisterResp" />
+                  <option value="LoginReq" />
+                  <option value="LoginResp" />
+                  <option value="UserServiceRegisterArgs" />
+                  <option value="UserServiceRegisterResult" />
+                  <option value="UserServiceLoginArgs" />
+                  <option value="UserServiceLoginResult" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/user/userservice/client.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741973189353" />
+              <option name="schema">
+                <list>
+                  <option value="kUserServiceClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/user/userservice/server.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741973189353" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/idl/kitex_gen/user/userservice/userservice.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741973189354" />
+              <option name="schema">
+                <list>
+                  <option value="kClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/initialize/initialize.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742015758482" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/model/clients.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741974101221" />
+              <option name="schema">
+                <list>
+                  <option value="Clients" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/model/model.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741974101221" />
+              <option name="schema">
+                <list>
+                  <option value="Clients" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/model/resp.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741975629560" />
+              <option name="schema">
+                <list>
+                  <option value="Response" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/model/user.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741975988367" />
+              <option name="schema">
+                <list>
+                  <option value="User" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/order/handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741973077971" />
+              <option name="schema">
+                <list>
+                  <option value="OrderServiceImpl" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/order/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741973077982" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/stock/handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741973077988" />
+              <option name="schema">
+                <list>
+                  <option value="StockServiceImpl" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/stock/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741973083134" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/user/handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742016356554" />
+              <option name="schema">
+                <list>
+                  <option value="UserServiceImpl" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/user/init/db.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742018847723" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/user/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742016578129" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order/handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016318" />
+              <option name="schema">
+                <list>
+                  <option value="OrderServiceImpl" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order/kitex_gen/common/common.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953328204" />
+              <option name="schema">
+                <list>
+                  <option value="Resp" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order/kitex_gen/common/k-common.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953328211" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order/kitex_gen/common/k-consts.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953328211" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order/kitex_gen/order/k-consts.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953328211" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order/kitex_gen/order/k-order.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016374" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order/kitex_gen/order/order.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016489" />
+              <option name="schema">
+                <list>
+                  <option value="OrderReq" />
+                  <option value="OrderResp" />
+                  <option value="OrderQueryReq" />
+                  <option value="OrderQueryResp" />
+                  <option value="Order" />
+                  <option value="OrderServiceCreateOrderArgs" />
+                  <option value="OrderServiceCreateOrderResult" />
+                  <option value="OrderServiceQueryOrderArgs" />
+                  <option value="OrderServiceQueryOrderResult" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order/kitex_gen/order/orderservice/client.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016280" />
+              <option name="schema">
+                <list>
+                  <option value="kOrderServiceClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order/kitex_gen/order/orderservice/orderservice.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016401" />
+              <option name="schema">
+                <list>
+                  <option value="kClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order/kitex_gen/order/orderservice/server.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016384" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016407" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order_service/handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953328211" />
+              <option name="schema">
+                <list>
+                  <option value="OrderServiceImpl" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order_service/kitex_gen/common/common.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953328204" />
+              <option name="schema">
+                <list>
+                  <option value="Resp" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order_service/kitex_gen/common/k-common.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953328211" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order_service/kitex_gen/common/k-consts.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953328211" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order_service/kitex_gen/order/k-consts.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953328211" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order_service/kitex_gen/order/k-order.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953328213" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order_service/kitex_gen/order/order.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953328209" />
+              <option name="schema">
+                <list>
+                  <option value="OrderReq" />
+                  <option value="OrderResp" />
+                  <option value="OrderQueryReq" />
+                  <option value="OrderQueryResp" />
+                  <option value="Order" />
+                  <option value="OrderServiceCreateOrderArgs" />
+                  <option value="OrderServiceCreateOrderResult" />
+                  <option value="OrderServiceQueryOrderArgs" />
+                  <option value="OrderServiceQueryOrderResult" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order_service/kitex_gen/order/orderservice/client.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953328210" />
+              <option name="schema">
+                <list>
+                  <option value="kOrderServiceClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order_service/kitex_gen/order/orderservice/orderservice.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953328210" />
+              <option name="schema">
+                <list>
+                  <option value="kClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order_service/kitex_gen/order/orderservice/server.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953328210" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/order_service/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953328211" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock/handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016293" />
+              <option name="schema">
+                <list>
+                  <option value="StockServiceImpl" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock/kitex_gen/common/common.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953349355" />
+              <option name="schema">
+                <list>
+                  <option value="Resp" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock/kitex_gen/common/k-common.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953349361" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock/kitex_gen/common/k-consts.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953349360" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock/kitex_gen/stock/k-consts.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953349361" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock/kitex_gen/stock/k-stock.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016535" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock/kitex_gen/stock/stock.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016449" />
+              <option name="schema">
+                <list>
+                  <option value="StockReq" />
+                  <option value="StockResp" />
+                  <option value="StockServiceQueryStockArgs" />
+                  <option value="StockServiceQueryStockResult" />
+                  <option value="StockServiceProDeductStockArgs" />
+                  <option value="StockServiceProDeductStockResult" />
+                  <option value="StockServiceRollCallBackStockArgs" />
+                  <option value="StockServiceRollCallBackStockResult" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock/kitex_gen/stock/stockservice/client.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016312" />
+              <option name="schema">
+                <list>
+                  <option value="kStockServiceClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock/kitex_gen/stock/stockservice/server.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016414" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock/kitex_gen/stock/stockservice/stockservice.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016392" />
+              <option name="schema">
+                <list>
+                  <option value="kClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955651285" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock_service/handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953349360" />
+              <option name="schema">
+                <list>
+                  <option value="StockServiceImpl" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock_service/kitex_gen/common/common.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953349355" />
+              <option name="schema">
+                <list>
+                  <option value="Resp" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock_service/kitex_gen/common/k-common.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953349361" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock_service/kitex_gen/common/k-consts.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953349360" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock_service/kitex_gen/stock/k-consts.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953349361" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock_service/kitex_gen/stock/k-stock.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953349362" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock_service/kitex_gen/stock/stock.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953349358" />
+              <option name="schema">
+                <list>
+                  <option value="StockReq" />
+                  <option value="StockResp" />
+                  <option value="StockServiceQueryStockArgs" />
+                  <option value="StockServiceQueryStockResult" />
+                  <option value="StockServiceProDeductStockArgs" />
+                  <option value="StockServiceProDeductStockResult" />
+                  <option value="StockServiceRollCallBackStockArgs" />
+                  <option value="StockServiceRollCallBackStockResult" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock_service/kitex_gen/stock/stockservice/client.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953349359" />
+              <option name="schema">
+                <list>
+                  <option value="kStockServiceClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock_service/kitex_gen/stock/stockservice/server.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953349360" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock_service/kitex_gen/stock/stockservice/stockservice.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953349360" />
+              <option name="schema">
+                <list>
+                  <option value="kClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/stock_service/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953349360" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user/handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016299" />
+              <option name="schema">
+                <list>
+                  <option value="UserServiceImpl" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user/kitex_gen/common/common.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953363717" />
+              <option name="schema">
+                <list>
+                  <option value="Resp" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user/kitex_gen/common/k-common.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953363728" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user/kitex_gen/common/k-consts.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953363727" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user/kitex_gen/user/k-consts.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953363728" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user/kitex_gen/user/k-user.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016338" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user/kitex_gen/user/user.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016509" />
+              <option name="schema">
+                <list>
+                  <option value="RegisterReq" />
+                  <option value="RegisterResp" />
+                  <option value="LoginReq" />
+                  <option value="LoginResp" />
+                  <option value="UserServiceRegisterArgs" />
+                  <option value="UserServiceRegisterResult" />
+                  <option value="UserServiceLoginArgs" />
+                  <option value="UserServiceLoginResult" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user/kitex_gen/user/userservice/client.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016324" />
+              <option name="schema">
+                <list>
+                  <option value="kUserServiceClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user/kitex_gen/user/userservice/server.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016329" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user/kitex_gen/user/userservice/userservice.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955016500" />
+              <option name="schema">
+                <list>
+                  <option value="kClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741955739077" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user_service/handler.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953363727" />
+              <option name="schema">
+                <list>
+                  <option value="UserServiceImpl" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user_service/kitex_gen/common/common.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953363717" />
+              <option name="schema">
+                <list>
+                  <option value="Resp" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user_service/kitex_gen/common/k-common.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953363728" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user_service/kitex_gen/common/k-consts.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953363727" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user_service/kitex_gen/user/k-consts.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953363728" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user_service/kitex_gen/user/k-user.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953363729" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user_service/kitex_gen/user/user.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953363724" />
+              <option name="schema">
+                <list>
+                  <option value="RegisterReq" />
+                  <option value="RegisterResp" />
+                  <option value="LoginReq" />
+                  <option value="LoginResp" />
+                  <option value="UserServiceRegisterArgs" />
+                  <option value="UserServiceRegisterResult" />
+                  <option value="UserServiceLoginArgs" />
+                  <option value="UserServiceLoginResult" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user_service/kitex_gen/user/userservice/client.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953363726" />
+              <option name="schema">
+                <list>
+                  <option value="kUserServiceClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user_service/kitex_gen/user/userservice/server.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953363726" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user_service/kitex_gen/user/userservice/userservice.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953363726" />
+              <option name="schema">
+                <list>
+                  <option value="kClient" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/service/user_service/main.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1741953363727" />
+            </ScannedPath>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="tableStructMapping">
+      <map>
+        <entry key="client" value="Client" />
+        <entry key="clients" value="Clients" />
+        <entry key="k_client" value="kClient" />
+        <entry key="k_order_service_client" value="kOrderServiceClient" />
+        <entry key="k_stock_service_client" value="kStockServiceClient" />
+        <entry key="k_user_service_client" value="kUserServiceClient" />
+        <entry key="login_req" value="LoginReq" />
+        <entry key="login_resp" value="LoginResp" />
+        <entry key="order" value="Order" />
+        <entry key="order_query_req" value="OrderQueryReq" />
+        <entry key="order_query_request" value="OrderQueryRequest" />
+        <entry key="order_query_resp" value="OrderQueryResp" />
+        <entry key="order_query_response" value="OrderQueryResponse" />
+        <entry key="order_req" value="OrderReq" />
+        <entry key="order_resp" value="OrderResp" />
+        <entry key="order_service_create_order_args" value="OrderServiceCreateOrderArgs" />
+        <entry key="order_service_create_order_result" value="OrderServiceCreateOrderResult" />
+        <entry key="order_service_impl" value="OrderServiceImpl" />
+        <entry key="order_service_query_order_args" value="OrderServiceQueryOrderArgs" />
+        <entry key="order_service_query_order_result" value="OrderServiceQueryOrderResult" />
+        <entry key="register_req" value="RegisterReq" />
+        <entry key="register_resp" value="RegisterResp" />
+        <entry key="resp" value="Resp" />
+        <entry key="response" value="Response" />
+        <entry key="stock_req" value="StockReq" />
+        <entry key="stock_resp" value="StockResp" />
+        <entry key="stock_service_impl" value="StockServiceImpl" />
+        <entry key="stock_service_pre_deduct_stock_args" value="StockServicePreDeductStockArgs" />
+        <entry key="stock_service_pre_deduct_stock_result" value="StockServicePreDeductStockResult" />
+        <entry key="stock_service_pro_deduct_stock_args" value="StockServiceProDeductStockArgs" />
+        <entry key="stock_service_pro_deduct_stock_result" value="StockServiceProDeductStockResult" />
+        <entry key="stock_service_query_stock_args" value="StockServiceQueryStockArgs" />
+        <entry key="stock_service_query_stock_result" value="StockServiceQueryStockResult" />
+        <entry key="stock_service_roll_call_back_stock_args" value="StockServiceRollCallBackStockArgs" />
+        <entry key="stock_service_roll_call_back_stock_result" value="StockServiceRollCallBackStockResult" />
+        <entry key="stock_service_rollback_stock_args" value="StockServiceRollbackStockArgs" />
+        <entry key="stock_service_rollback_stock_result" value="StockServiceRollbackStockResult" />
+        <entry key="user" value="User" />
+        <entry key="user_service_impl" value="UserServiceImpl" />
+        <entry key="user_service_login_args" value="UserServiceLoginArgs" />
+        <entry key="user_service_login_result" value="UserServiceLoginResult" />
+        <entry key="user_service_register_args" value="UserServiceRegisterArgs" />
+        <entry key="user_service_register_result" value="UserServiceRegisterResult" />
+      </map>
+    </option>
     <option name="lastTimeChecked" value="1741947564615" />
   </component>
 </project>
