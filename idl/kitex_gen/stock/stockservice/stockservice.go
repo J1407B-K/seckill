@@ -34,6 +34,20 @@ var serviceMethods = map[string]kitex.MethodInfo{
 		false,
 		kitex.WithStreamingMode(kitex.StreamingNone),
 	),
+	"ReserveStock": kitex.NewMethodInfo(
+		reserveStockHandler,
+		newStockServiceReserveStockArgs,
+		newStockServiceReserveStockResult,
+		false,
+		kitex.WithStreamingMode(kitex.StreamingNone),
+	),
+	"ReleaseStock": kitex.NewMethodInfo(
+		releaseStockHandler,
+		newStockServiceReleaseStockArgs,
+		newStockServiceReleaseStockResult,
+		false,
+		kitex.WithStreamingMode(kitex.StreamingNone),
+	),
 }
 
 var (
@@ -154,6 +168,42 @@ func newStockServiceRollbackStockResult() interface{} {
 	return stock.NewStockServiceRollbackStockResult()
 }
 
+func reserveStockHandler(ctx context.Context, handler interface{}, arg, result interface{}) error {
+	realArg := arg.(*stock.StockServiceReserveStockArgs)
+	realResult := result.(*stock.StockServiceReserveStockResult)
+	success, err := handler.(stock.StockService).ReserveStock(ctx, realArg.Req)
+	if err != nil {
+		return err
+	}
+	realResult.Success = success
+	return nil
+}
+func newStockServiceReserveStockArgs() interface{} {
+	return stock.NewStockServiceReserveStockArgs()
+}
+
+func newStockServiceReserveStockResult() interface{} {
+	return stock.NewStockServiceReserveStockResult()
+}
+
+func releaseStockHandler(ctx context.Context, handler interface{}, arg, result interface{}) error {
+	realArg := arg.(*stock.StockServiceReleaseStockArgs)
+	realResult := result.(*stock.StockServiceReleaseStockResult)
+	success, err := handler.(stock.StockService).ReleaseStock(ctx, realArg.Req)
+	if err != nil {
+		return err
+	}
+	realResult.Success = success
+	return nil
+}
+func newStockServiceReleaseStockArgs() interface{} {
+	return stock.NewStockServiceReleaseStockArgs()
+}
+
+func newStockServiceReleaseStockResult() interface{} {
+	return stock.NewStockServiceReleaseStockResult()
+}
+
 type kClient struct {
 	c client.Client
 }
@@ -189,6 +239,26 @@ func (p *kClient) RollbackStock(ctx context.Context, req *stock.StockReq) (r *st
 	_args.Req = req
 	var _result stock.StockServiceRollbackStockResult
 	if err = p.c.Call(ctx, "RollbackStock", &_args, &_result); err != nil {
+		return
+	}
+	return _result.GetSuccess(), nil
+}
+
+func (p *kClient) ReserveStock(ctx context.Context, req *stock.StockReq) (r *stock.StockResp, err error) {
+	var _args stock.StockServiceReserveStockArgs
+	_args.Req = req
+	var _result stock.StockServiceReserveStockResult
+	if err = p.c.Call(ctx, "ReserveStock", &_args, &_result); err != nil {
+		return
+	}
+	return _result.GetSuccess(), nil
+}
+
+func (p *kClient) ReleaseStock(ctx context.Context, req *stock.StockReq) (r *stock.StockResp, err error) {
+	var _args stock.StockServiceReleaseStockArgs
+	_args.Req = req
+	var _result stock.StockServiceReleaseStockResult
+	if err = p.c.Call(ctx, "ReleaseStock", &_args, &_result); err != nil {
 		return
 	}
 	return _result.GetSuccess(), nil

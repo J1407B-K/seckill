@@ -3,6 +3,13 @@
   <component name="GoORMHelperCache">
     <option name="schemaMapping">
       <map>
+        <entry key="Claims">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/utils/jwt.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="Clients">
           <value>
             <set>
@@ -13,6 +20,7 @@
         <entry key="Config">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/rpc/stock/config/config.go" />
               <option value="file://$PROJECT_DIR$/rpc/user/config/config.go" />
             </set>
           </value>
@@ -34,6 +42,7 @@
         <entry key="MysqlConfig">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/rpc/stock/config/config.go" />
               <option value="file://$PROJECT_DIR$/rpc/user/config/config.go" />
             </set>
           </value>
@@ -112,6 +121,27 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/idl/kitex_gen/order/order.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="Product">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/rpc/stock/model/model.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="ProductStock">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/rpc/stock/model/model.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="RedisConfig">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/rpc/stock/config/config.go" />
             </set>
           </value>
         </entry>
@@ -286,7 +316,7 @@
         <entry key="file://$PROJECT_DIR$/api/api.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742015815217" />
+              <option name="lastModified" value="1742096838986" />
             </ScannedPath>
           </value>
         </entry>
@@ -307,7 +337,7 @@
         <entry key="file://$PROJECT_DIR$/handler/handler.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742020258064" />
+              <option name="lastModified" value="1742096838700" />
             </ScannedPath>
           </value>
         </entry>
@@ -576,7 +606,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/order/handler.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1741973077971" />
+              <option name="lastModified" value="1742098180683" />
               <option name="schema">
                 <list>
                   <option value="OrderServiceImpl" />
@@ -592,10 +622,52 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/stock/config/config.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742123751708" />
+              <option name="schema">
+                <list>
+                  <option value="Config" />
+                  <option value="MysqlConfig" />
+                  <option value="RedisConfig" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/stock/dao/mysql.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742124956715" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/stock/dao/redis.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742125888684" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/stock/flag/automigrate.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742124289831" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/stock/global/global.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742123403104" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/rpc/stock/handler.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1741973077988" />
+              <option name="lastModified" value="1742127135159" />
               <option name="schema">
                 <list>
                   <option value="StockServiceImpl" />
@@ -604,10 +676,50 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/stock/initialize/mysql.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742123455981" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/stock/initialize/redis.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742126587366" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/stock/initialize/reids.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742123454002" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/stock/initialize/viper.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742123441602" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/rpc/stock/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1741973083134" />
+              <option name="lastModified" value="1742126643176" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/stock/model/model.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742124919578" />
+              <option name="schema">
+                <list>
+                  <option value="ProductStock" />
+                </list>
+              </option>
             </ScannedPath>
           </value>
         </entry>
@@ -627,7 +739,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/user/dao/mysql.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742023188650" />
+              <option name="lastModified" value="1742096299883" />
             </ScannedPath>
           </value>
         </entry>
@@ -660,7 +772,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/user/handler.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742023367317" />
+              <option name="lastModified" value="1742096838437" />
               <option name="schema">
                 <list>
                   <option value="UserServiceImpl" />
@@ -709,10 +821,30 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/utils/jwt.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742096838446" />
+              <option name="schema">
+                <list>
+                  <option value="Claims" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/utils/middle.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742096838406" />
+            </ScannedPath>
+          </value>
+        </entry>
       </map>
     </option>
     <option name="tableStructMapping">
       <map>
+        <entry key="claims" value="Claims" />
         <entry key="clients" value="Clients" />
         <entry key="config" value="Config" />
         <entry key="k_client" value="kClient" />
@@ -733,6 +865,9 @@
         <entry key="order_service_impl" value="OrderServiceImpl" />
         <entry key="order_service_query_order_args" value="OrderServiceQueryOrderArgs" />
         <entry key="order_service_query_order_result" value="OrderServiceQueryOrderResult" />
+        <entry key="product" value="Product" />
+        <entry key="product_stock" value="ProductStock" />
+        <entry key="redis_config" value="RedisConfig" />
         <entry key="register_req" value="RegisterReq" />
         <entry key="register_resp" value="RegisterResp" />
         <entry key="resp" value="Resp" />

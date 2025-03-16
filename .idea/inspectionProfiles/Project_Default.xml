@@ -4,6 +4,7 @@
     <inspection_tool class="GoDfaErrorMayBeNotNil" enabled="true" level="WARNING" enabled_by_default="true">
       <methods>
         <method importPath="seckill/idl/kitex_gen/user/userservice" receiver="Client" name="Register" />
+        <method importPath="seckill/idl/kitex_gen/user/userservice" receiver="Client" name="Login" />
       </methods>
     </inspection_tool>
   </profile>

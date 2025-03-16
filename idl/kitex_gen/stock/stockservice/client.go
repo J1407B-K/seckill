@@ -14,6 +14,8 @@ type Client interface {
 	QueryStock(ctx context.Context, req *stock.StockReq, callOptions ...callopt.Option) (r *stock.StockResp, err error)
 	PreDeductStock(ctx context.Context, req *stock.StockReq, callOptions ...callopt.Option) (r *stock.StockResp, err error)
 	RollbackStock(ctx context.Context, req *stock.StockReq, callOptions ...callopt.Option) (r *stock.StockResp, err error)
+	ReserveStock(ctx context.Context, req *stock.StockReq, callOptions ...callopt.Option) (r *stock.StockResp, err error)
+	ReleaseStock(ctx context.Context, req *stock.StockReq, callOptions ...callopt.Option) (r *stock.StockResp, err error)
 }
 
 // NewClient creates a client for the service defined in IDL.
@@ -58,4 +60,14 @@ func (p *kStockServiceClient) PreDeductStock(ctx context.Context, req *stock.Sto
 func (p *kStockServiceClient) RollbackStock(ctx context.Context, req *stock.StockReq, callOptions ...callopt.Option) (r *stock.StockResp, err error) {
 	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
 	return p.kClient.RollbackStock(ctx, req)
+}
+
+func (p *kStockServiceClient) ReserveStock(ctx context.Context, req *stock.StockReq, callOptions ...callopt.Option) (r *stock.StockResp, err error) {
+	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
+	return p.kClient.ReserveStock(ctx, req)
+}
+
+func (p *kStockServiceClient) ReleaseStock(ctx context.Context, req *stock.StockReq, callOptions ...callopt.Option) (r *stock.StockResp, err error) {
+	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
+	return p.kClient.ReleaseStock(ctx, req)
 }
