@@ -8,8 +8,8 @@ import (
 func SetupViper() {
 	//先指定文件
 	viper.SetConfigType("yaml")
-	viper.SetConfigName("user")
-	viper.SetConfigFile("./rpc/manifest/user.yaml")
+	viper.SetConfigName("stock")
+	viper.SetConfigFile("./rpc/manifest/stock.yaml")
 
 	//读取
 	err := viper.ReadInConfig()

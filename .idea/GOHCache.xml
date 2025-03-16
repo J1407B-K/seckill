@@ -50,6 +50,7 @@
         <entry key="Option">
           <value>
             <set>
+              <option value="file://$PROJECT_DIR$/rpc/stock/flag/option.go" />
               <option value="file://$PROJECT_DIR$/rpc/user/flag/option.go" />
             </set>
           </value>
@@ -222,6 +223,34 @@
             </set>
           </value>
         </entry>
+        <entry key="StockServiceReleaseStockArgs">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/stock/stock.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="StockServiceReleaseStockResult">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/stock/stock.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="StockServiceReserveStockArgs">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/stock/stock.go" />
+            </set>
+          </value>
+        </entry>
+        <entry key="StockServiceReserveStockResult">
+          <value>
+            <set>
+              <option value="file://$PROJECT_DIR$/idl/kitex_gen/stock/stock.go" />
+            </set>
+          </value>
+        </entry>
         <entry key="StockServiceRollbackStockArgs">
           <value>
             <set>
@@ -344,7 +373,7 @@
         <entry key="file://$PROJECT_DIR$/idl/kitex_gen/common/common.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1741973189348" />
+              <option name="lastModified" value="1742122690194" />
               <option name="schema">
                 <list>
                   <option value="Resp" />
@@ -356,14 +385,14 @@
         <entry key="file://$PROJECT_DIR$/idl/kitex_gen/common/k-common.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1741973189354" />
+              <option name="lastModified" value="1742122690202" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/idl/kitex_gen/common/k-consts.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1741973189354" />
+              <option name="lastModified" value="1742122690202" />
             </ScannedPath>
           </value>
         </entry>
@@ -435,21 +464,21 @@
         <entry key="file://$PROJECT_DIR$/idl/kitex_gen/stock/k-consts.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1741972534268" />
+              <option name="lastModified" value="1742122690202" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/idl/kitex_gen/stock/k-stock.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1741972534271" />
+              <option name="lastModified" value="1742122690205" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/idl/kitex_gen/stock/stock.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1741972534266" />
+              <option name="lastModified" value="1742122690200" />
               <option name="schema">
                 <list>
                   <option value="StockReq" />
@@ -460,6 +489,10 @@
                   <option value="StockServicePreDeductStockResult" />
                   <option value="StockServiceRollbackStockArgs" />
                   <option value="StockServiceRollbackStockResult" />
+                  <option value="StockServiceReserveStockArgs" />
+                  <option value="StockServiceReserveStockResult" />
+                  <option value="StockServiceReleaseStockArgs" />
+                  <option value="StockServiceReleaseStockResult" />
                 </list>
               </option>
             </ScannedPath>
@@ -468,7 +501,7 @@
         <entry key="file://$PROJECT_DIR$/idl/kitex_gen/stock/stockservice/client.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1741972534267" />
+              <option name="lastModified" value="1742122690201" />
               <option name="schema">
                 <list>
                   <option value="kStockServiceClient" />
@@ -480,14 +513,14 @@
         <entry key="file://$PROJECT_DIR$/idl/kitex_gen/stock/stockservice/server.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1741972534267" />
+              <option name="lastModified" value="1742122690201" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/idl/kitex_gen/stock/stockservice/stockservice.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1741972534268" />
+              <option name="lastModified" value="1742122690202" />
               <option name="schema">
                 <list>
                   <option value="kClient" />
@@ -657,6 +690,18 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/stock/flag/option.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742022034264" />
+              <option name="schema">
+                <list>
+                  <option value="Option" />
+                </list>
+              </option>
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/rpc/stock/global/global.go">
           <value>
             <ScannedPath>
@@ -700,7 +745,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/stock/initialize/viper.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742123441602" />
+              <option name="lastModified" value="1742130310264" />
             </ScannedPath>
           </value>
         </entry>
@@ -879,6 +924,10 @@
         <entry key="stock_service_pre_deduct_stock_result" value="StockServicePreDeductStockResult" />
         <entry key="stock_service_query_stock_args" value="StockServiceQueryStockArgs" />
         <entry key="stock_service_query_stock_result" value="StockServiceQueryStockResult" />
+        <entry key="stock_service_release_stock_args" value="StockServiceReleaseStockArgs" />
+        <entry key="stock_service_release_stock_result" value="StockServiceReleaseStockResult" />
+        <entry key="stock_service_reserve_stock_args" value="StockServiceReserveStockArgs" />
+        <entry key="stock_service_reserve_stock_result" value="StockServiceReserveStockResult" />
         <entry key="stock_service_rollback_stock_args" value="StockServiceRollbackStockArgs" />
         <entry key="stock_service_rollback_stock_result" value="StockServiceRollbackStockResult" />
         <entry key="user" value="User" />
