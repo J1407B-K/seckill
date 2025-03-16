@@ -17,5 +17,6 @@ func (s *OrderServiceImpl) CreateOrder(ctx context.Context, req *order.OrderReq)
 // QueryOrder implements the OrderServiceImpl interface.
 func (s *OrderServiceImpl) QueryOrder(ctx context.Context, req *order.OrderQueryRequest) (resp *order.OrderQueryResponse, err error) {
 	// TODO: Your code here...
+
 	return
 }
