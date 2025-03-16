@@ -17,6 +17,7 @@ func InitRouter() {
 	v1 := h.Group("/")
 	{
 		v1.POST("register", handler.Register)
+		v1.POST("login", handler.Login)
 	}
 
 	h.Spin()

@@ -19,3 +19,13 @@ func SaveUser(db *gorm.DB, req *user.RegisterReq) error {
 	}
 	return nil
 }
+
+func SelectUser(db *gorm.DB, k string) (*model.User, error) {
+	var u model.User
+
+	err := db.Where("username = ?", k).First(&u).Error
+	if err != nil {
+		return nil, err
+	}
+	return &u, nil
+}

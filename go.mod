@@ -9,6 +9,7 @@ require (
 	github.com/cloudwego/hertz v0.9.6
 	github.com/cloudwego/kitex v0.12.3
 	github.com/cloudwego/kitex/pkg/protocol/bthrift v0.0.0-20250313142741-4031e2a50d28
+	github.com/golang-jwt/jwt/v4 v4.4.2
 	github.com/kitex-contrib/registry-etcd v0.2.6
 	github.com/spf13/viper v1.19.0
 	golang.org/x/crypto v0.22.0

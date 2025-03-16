@@ -40,6 +40,25 @@ func (s *UserServiceImpl) Register(ctx context.Context, req *user.RegisterReq) (
 
 // Login implements the UserServiceImpl interface.
 func (s *UserServiceImpl) Login(ctx context.Context, req *user.LoginReq) (resp *user.LoginResp, err error) {
-	// TODO: Your code here...
-	return
+
+	//获得userinfo
+	userinfo, err := dao.SelectUser(s.DB, req.Username)
+	if err != nil {
+		return nil, err
+	}
+
+	//比较是否一致
+	err = hash.CompareHashAndPassword(userinfo.Password, req.Password)
+	if err != nil {
+		return nil, err
+	}
+
+	resp = &user.LoginResp{
+		Resp: &common.Resp{
+			Code: 0,
+			Msg:  "ok",
+			Data: req.Username,
+		},
+	}
+	return resp, nil
 }
