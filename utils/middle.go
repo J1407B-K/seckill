@@ -33,7 +33,7 @@ func JWTAuthMiddleware() app.HandlerFunc {
 		}
 
 		// 将解析后的用户信息存入上下文
-		ctx.Set("username", claims.Username)
+		ctx.Set("userid", claims.UserId)
 
 		// 继续处理请求
 		ctx.Next(c)

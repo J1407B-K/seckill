@@ -26,8 +26,13 @@ func main() {
 		log.Fatal(err)
 	}
 
+	stockCli, err := NewStockClient()
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	addr, _ := net.ResolveTCPAddr("tcp", "127.0.0.1:8892")
-	svr := order.NewServer(&OrderServiceImpl{db: db},
+	svr := order.NewServer(&OrderServiceImpl{db: db, stockCli: stockCli},
 		server.WithServiceAddr(addr),
 		server.WithRegistry(r),
 		server.WithServerBasicInfo(&rpcinfo.EndpointBasicInfo{

@@ -1,25 +1,21 @@
 package utils
 
 import (
-	"context"
-	"github.com/cloudwego/hertz/pkg/app"
-	"github.com/cloudwego/hertz/pkg/common/utils"
 	"github.com/golang-jwt/jwt/v4"
-	"net/http"
 	"time"
 )
 
 var JwtSecret = []byte("by_kq")
 
 type Claims struct {
-	Username string `json:"username"`
+	UserId string `json:"UserId"`
 	jwt.RegisteredClaims
 }
 
-func GenerateToken(username string) (string, error) {
+func GenerateToken(userid string) (string, error) {
 	expirationTime := time.Now().Add(24 * time.Hour) // 令牌有效期为24小时
 	claims := &Claims{
-		Username: username,
+		UserId: userid,
 		RegisteredClaims: jwt.RegisteredClaims{
 			ExpiresAt: jwt.NewNumericDate(expirationTime),
 		},
@@ -44,18 +40,4 @@ func ParseToken(tokenString string) (*Claims, error) {
 	}
 
 	return nil, err
-}
-
-func GetName(c context.Context, ctx *app.RequestContext) {
-	// 从上下文中获取用户名
-	username, exists := ctx.Get("username")
-	if !exists {
-		ctx.JSON(http.StatusInternalServerError, utils.H{"error": "Username not found"})
-		return
-	}
-
-	ctx.JSON(http.StatusOK, utils.H{
-		"message":  "Welcome!",
-		"username": username,
-	})
 }

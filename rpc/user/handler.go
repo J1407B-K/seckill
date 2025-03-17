@@ -8,6 +8,7 @@ import (
 	user "seckill/idl/kitex_gen/user"
 	"seckill/rpc/user/dao"
 	"seckill/rpc/user/hash"
+	"strconv"
 )
 
 // UserServiceImpl implements the last service interface defined in the IDL.
@@ -57,7 +58,7 @@ func (s *UserServiceImpl) Login(ctx context.Context, req *user.LoginReq) (resp *
 		Resp: &common.Resp{
 			Code: 0,
 			Msg:  "ok",
-			Data: req.Username,
+			Data: strconv.Itoa(userinfo.Userid),
 		},
 	}
 	return resp, nil

@@ -6,6 +6,7 @@ import (
 	"github.com/cloudwego/hertz/pkg/app/server"
 	"github.com/cloudwego/hertz/pkg/common/utils"
 	"seckill/handler"
+	middle "seckill/utils"
 )
 
 func InitRouter() {
@@ -19,6 +20,15 @@ func InitRouter() {
 		v1.POST("register", handler.Register)
 		v1.POST("login", handler.Login)
 	}
+
+	v2 := h.Group("/")
+	{
+		v2.POST("createorder", handler.CreateOrder)
+		v2.POST("confirmorder", handler.ConfirmOrder)
+		v2.POST("queryorder", handler.QueryOrder)
+	}
+
+	v2.Use(middle.JWTAuthMiddleware())
 
 	h.Spin()
 }
