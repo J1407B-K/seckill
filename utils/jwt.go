@@ -1,43 +1,50 @@
 package utils
 
 import (
-	"github.com/golang-jwt/jwt/v4"
+	"context"
+	"github.com/cloudwego/hertz/pkg/app"
+	"github.com/cloudwego/hertz/pkg/common/utils"
+	"github.com/hertz-contrib/jwt"
+	"log"
+	"net/http"
+	"seckill/handler"
+	"seckill/model"
 	"time"
 )
 
-var JwtSecret = []byte("by_kq")
+var identityKey = "userid"
 
-type Claims struct {
-	UserId string `json:"UserId"`
-	jwt.RegisteredClaims
-}
-
-func GenerateToken(userid string) (string, error) {
-	expirationTime := time.Now().Add(24 * time.Hour) // 令牌有效期为24小时
-	claims := &Claims{
-		UserId: userid,
-		RegisteredClaims: jwt.RegisteredClaims{
-			ExpiresAt: jwt.NewNumericDate(expirationTime),
+func NewMiddle() (*jwt.HertzJWTMiddleware, error) {
+	authMiddlewire, err := jwt.New(&jwt.HertzJWTMiddleware{
+		Realm:       "Hertz",
+		Key:         []byte("by_kq"),
+		Timeout:     time.Hour,
+		IdentityKey: identityKey,
+		PayloadFunc: func(data interface{}) jwt.MapClaims {
+			if v, ok := data.(string); ok {
+				return jwt.MapClaims{
+					identityKey: v,
+				}
+			}
+			return jwt.MapClaims{}
 		},
-	}
-
-	//封装
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
-
-	//密钥（依据这个加密）
-	return token.SignedString(JwtSecret)
-}
-
-func ParseToken(tokenString string) (*Claims, error) {
-	token, err := jwt.ParseWithClaims(tokenString, &Claims{}, func(token *jwt.Token) (interface{}, error) {
-		return JwtSecret, nil
+		IdentityHandler: func(ctx context.Context, c *app.RequestContext) interface{} {
+			claims := jwt.ExtractClaims(ctx, c)
+			if userid, ok := claims[identityKey].(string); ok {
+				return &model.User{UserId: userid}
+			}
+			return nil // 避免 nil 指针
+		},
+		Authenticator: handler.Login,
+		Unauthorized: func(ctx context.Context, c *app.RequestContext, code int, message string) {
+			c.JSON(http.StatusUnauthorized, utils.H{
+				"code":    code,
+				"message": message,
+			})
+		},
 	})
 	if err != nil {
-		return nil, err
+		log.Fatal("JWT Error:" + err.Error())
 	}
-	if claims, ok := token.Claims.(*Claims); ok && token.Valid {
-		return claims, nil
-	}
-
-	return nil, err
+	return authMiddlewire, nil
 }
