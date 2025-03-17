@@ -2,6 +2,7 @@ package handler
 
 import (
 	"context"
+	"fmt"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/common/utils"
 	"net/http"
@@ -9,7 +10,6 @@ import (
 	"seckill/idl/kitex_gen/order"
 	userrpc "seckill/idl/kitex_gen/user"
 	"seckill/model"
-	my_utils "seckill/utils"
 )
 
 func Register(c context.Context, ctx *app.RequestContext) {
@@ -52,7 +52,7 @@ func Register(c context.Context, ctx *app.RequestContext) {
 	})
 }
 
-func Login(c context.Context, ctx *app.RequestContext) {
+func Login(c context.Context, ctx *app.RequestContext) (interface{}, error) {
 	var user model.User
 
 	err := ctx.BindJSON(&user)
@@ -64,7 +64,7 @@ func Login(c context.Context, ctx *app.RequestContext) {
 				Data: "nil",
 			},
 		})
-		return
+		return nil, nil
 	}
 
 	rpcResp, err := global.Clients.UserClient.Login(c, &userrpc.LoginReq{
@@ -79,27 +79,24 @@ func Login(c context.Context, ctx *app.RequestContext) {
 				Data: "nil",
 			},
 		})
-		return
-	}
-
-	token, err := my_utils.GenerateToken(rpcResp.Resp.Data)
-	if err != nil {
-		return
+		return nil, nil
 	}
 
 	ctx.JSON(http.StatusOK, utils.H{
 		"resp": model.Response{
 			Code: 0,
 			Msg:  "ok",
-			Data: rpcResp.Resp.Data + "	" + token,
+			Data: rpcResp.Resp.Data,
 		},
 	})
+	return rpcResp.Resp.Data, nil
 }
 
 func CreateOrder(c context.Context, ctx *app.RequestContext) {
 	var co model.CreateOrder
 
 	userid, ok := ctx.Get("userid")
+	userinfo := userid.(*model.User)
 	err := ctx.BindJSON(&co)
 	if err != nil {
 		ctx.JSON(http.StatusBadGateway, utils.H{
@@ -116,7 +113,7 @@ func CreateOrder(c context.Context, ctx *app.RequestContext) {
 		ctx.JSON(http.StatusInternalServerError, utils.H{
 			"resp": model.Response{
 				Code: http.StatusInternalServerError,
-				Msg:  "Get username error",
+				Msg:  "Get userid error",
 				Data: "nil",
 			},
 		})
@@ -124,13 +121,15 @@ func CreateOrder(c context.Context, ctx *app.RequestContext) {
 	}
 
 	createOrderResp, err := global.Clients.OrderClient.CreateOrder(c, &order.OrderReq{
-		UserId:    userid.(string),
+		UserId:    userinfo.UserId,
 		ProductId: co.ProductId,
 		Count:     int32(co.Count),
 	})
 	if err != nil {
 		return
 	}
+
+	fmt.Println(createOrderResp)
 
 	ctx.JSON(http.StatusOK, utils.H{
 		"resp": model.Response{
