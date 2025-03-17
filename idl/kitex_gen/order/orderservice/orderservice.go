@@ -20,6 +20,20 @@ var serviceMethods = map[string]kitex.MethodInfo{
 		false,
 		kitex.WithStreamingMode(kitex.StreamingNone),
 	),
+	"ConfirmOrder": kitex.NewMethodInfo(
+		confirmOrderHandler,
+		newOrderServiceConfirmOrderArgs,
+		newOrderServiceConfirmOrderResult,
+		false,
+		kitex.WithStreamingMode(kitex.StreamingNone),
+	),
+	"CancelOrder": kitex.NewMethodInfo(
+		cancelOrderHandler,
+		newOrderServiceCancelOrderArgs,
+		newOrderServiceCancelOrderResult,
+		false,
+		kitex.WithStreamingMode(kitex.StreamingNone),
+	),
 	"QueryOrder": kitex.NewMethodInfo(
 		queryOrderHandler,
 		newOrderServiceQueryOrderArgs,
@@ -111,10 +125,46 @@ func newOrderServiceCreateOrderResult() interface{} {
 	return order.NewOrderServiceCreateOrderResult()
 }
 
+func confirmOrderHandler(ctx context.Context, handler interface{}, arg, result interface{}) error {
+	realArg := arg.(*order.OrderServiceConfirmOrderArgs)
+	realResult := result.(*order.OrderServiceConfirmOrderResult)
+	success, err := handler.(order.OrderService).ConfirmOrder(ctx, realArg.OrderId)
+	if err != nil {
+		return err
+	}
+	realResult.Success = success
+	return nil
+}
+func newOrderServiceConfirmOrderArgs() interface{} {
+	return order.NewOrderServiceConfirmOrderArgs()
+}
+
+func newOrderServiceConfirmOrderResult() interface{} {
+	return order.NewOrderServiceConfirmOrderResult()
+}
+
+func cancelOrderHandler(ctx context.Context, handler interface{}, arg, result interface{}) error {
+	realArg := arg.(*order.OrderServiceCancelOrderArgs)
+	realResult := result.(*order.OrderServiceCancelOrderResult)
+	success, err := handler.(order.OrderService).CancelOrder(ctx, realArg.OrderId)
+	if err != nil {
+		return err
+	}
+	realResult.Success = success
+	return nil
+}
+func newOrderServiceCancelOrderArgs() interface{} {
+	return order.NewOrderServiceCancelOrderArgs()
+}
+
+func newOrderServiceCancelOrderResult() interface{} {
+	return order.NewOrderServiceCancelOrderResult()
+}
+
 func queryOrderHandler(ctx context.Context, handler interface{}, arg, result interface{}) error {
 	realArg := arg.(*order.OrderServiceQueryOrderArgs)
 	realResult := result.(*order.OrderServiceQueryOrderResult)
-	success, err := handler.(order.OrderService).QueryOrder(ctx, realArg.Req)
+	success, err := handler.(order.OrderService).QueryOrder(ctx, realArg.OrderId)
 	if err != nil {
 		return err
 	}
@@ -149,9 +199,29 @@ func (p *kClient) CreateOrder(ctx context.Context, req *order.OrderReq) (r *orde
 	return _result.GetSuccess(), nil
 }
 
-func (p *kClient) QueryOrder(ctx context.Context, req *order.OrderQueryRequest) (r *order.OrderQueryResponse, err error) {
+func (p *kClient) ConfirmOrder(ctx context.Context, orderId string) (r *order.OrderResp, err error) {
+	var _args order.OrderServiceConfirmOrderArgs
+	_args.OrderId = orderId
+	var _result order.OrderServiceConfirmOrderResult
+	if err = p.c.Call(ctx, "ConfirmOrder", &_args, &_result); err != nil {
+		return
+	}
+	return _result.GetSuccess(), nil
+}
+
+func (p *kClient) CancelOrder(ctx context.Context, orderId string) (r *order.OrderResp, err error) {
+	var _args order.OrderServiceCancelOrderArgs
+	_args.OrderId = orderId
+	var _result order.OrderServiceCancelOrderResult
+	if err = p.c.Call(ctx, "CancelOrder", &_args, &_result); err != nil {
+		return
+	}
+	return _result.GetSuccess(), nil
+}
+
+func (p *kClient) QueryOrder(ctx context.Context, orderId string) (r *order.OrderResp, err error) {
 	var _args order.OrderServiceQueryOrderArgs
-	_args.Req = req
+	_args.OrderId = orderId
 	var _result order.OrderServiceQueryOrderResult
 	if err = p.c.Call(ctx, "QueryOrder", &_args, &_result); err != nil {
 		return

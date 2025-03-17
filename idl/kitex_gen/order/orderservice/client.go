@@ -12,7 +12,9 @@ import (
 // Client is designed to provide IDL-compatible methods with call-option parameter for kitex framework.
 type Client interface {
 	CreateOrder(ctx context.Context, req *order.OrderReq, callOptions ...callopt.Option) (r *order.OrderResp, err error)
-	QueryOrder(ctx context.Context, req *order.OrderQueryRequest, callOptions ...callopt.Option) (r *order.OrderQueryResponse, err error)
+	ConfirmOrder(ctx context.Context, orderId string, callOptions ...callopt.Option) (r *order.OrderResp, err error)
+	CancelOrder(ctx context.Context, orderId string, callOptions ...callopt.Option) (r *order.OrderResp, err error)
+	QueryOrder(ctx context.Context, orderId string, callOptions ...callopt.Option) (r *order.OrderResp, err error)
 }
 
 // NewClient creates a client for the service defined in IDL.
@@ -49,7 +51,17 @@ func (p *kOrderServiceClient) CreateOrder(ctx context.Context, req *order.OrderR
 	return p.kClient.CreateOrder(ctx, req)
 }
 
-func (p *kOrderServiceClient) QueryOrder(ctx context.Context, req *order.OrderQueryRequest, callOptions ...callopt.Option) (r *order.OrderQueryResponse, err error) {
+func (p *kOrderServiceClient) ConfirmOrder(ctx context.Context, orderId string, callOptions ...callopt.Option) (r *order.OrderResp, err error) {
 	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
-	return p.kClient.QueryOrder(ctx, req)
+	return p.kClient.ConfirmOrder(ctx, orderId)
+}
+
+func (p *kOrderServiceClient) CancelOrder(ctx context.Context, orderId string, callOptions ...callopt.Option) (r *order.OrderResp, err error) {
+	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
+	return p.kClient.CancelOrder(ctx, orderId)
+}
+
+func (p *kOrderServiceClient) QueryOrder(ctx context.Context, orderId string, callOptions ...callopt.Option) (r *order.OrderResp, err error) {
+	ctx = client.NewCtxWithCallOptions(ctx, callOptions)
+	return p.kClient.QueryOrder(ctx, orderId)
 }

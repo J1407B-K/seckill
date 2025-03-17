@@ -125,13 +125,6 @@
             </set>
           </value>
         </entry>
-        <entry key="Product">
-          <value>
-            <set>
-              <option value="file://$PROJECT_DIR$/rpc/stock/model/model.go" />
-            </set>
-          </value>
-        </entry>
         <entry key="ProductStock">
           <value>
             <set>
@@ -712,7 +705,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/stock/handler.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742127135159" />
+              <option name="lastModified" value="1742134033490" />
               <option name="schema">
                 <list>
                   <option value="StockServiceImpl" />
@@ -732,13 +725,6 @@
           <value>
             <ScannedPath>
               <option name="lastModified" value="1742126587366" />
-            </ScannedPath>
-          </value>
-        </entry>
-        <entry key="file://$PROJECT_DIR$/rpc/stock/initialize/reids.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1742123454002" />
             </ScannedPath>
           </value>
         </entry>
@@ -910,7 +896,6 @@
         <entry key="order_service_impl" value="OrderServiceImpl" />
         <entry key="order_service_query_order_args" value="OrderServiceQueryOrderArgs" />
         <entry key="order_service_query_order_result" value="OrderServiceQueryOrderResult" />
-        <entry key="product" value="Product" />
         <entry key="product_stock" value="ProductStock" />
         <entry key="redis_config" value="RedisConfig" />
         <entry key="register_req" value="RegisterReq" />
@@ -938,6 +923,6 @@
         <entry key="user_service_register_result" value="UserServiceRegisterResult" />
       </map>
     </option>
-    <option name="lastTimeChecked" value="1742046426849" />
+    <option name="lastTimeChecked" value="1742191895747" />
   </component>
 </project>

@@ -2,44 +2,27 @@ namespace go order
 
 include "common.thrift"
 
-// 下单请求
+// 订单请求参数（创建订单时使用）
 struct OrderReq {
-  1: string userId,       // 用户 ID
-  2: string productId,    // 商品 ID
-  3: i32 quantity         // 商品数量
+  1: string userId,
+  2: string productId,
+  3: i32 count
 }
 
-// 下单响应
+// 订单响应参数
 struct OrderResp {
-  1: i32 code,
-  2: string message,
-  3: optional string orderId   // 成功返回订单号
-}
-
-// 订单查询请求（可扩展）
-struct OrderQueryRequest {
-  1: string orderId
-}
-
-// 订单查询响应
-struct OrderQueryResponse {
-  1: i32 code,
-  2: string message,
-  3: optional Order order   // 订单详细信息
-}
-
-// 订单详细信息结构体
-struct Order {
-  1: string orderId,
-  2: string userId,
-  3: string productId,
-  4: i32 quantity,
-  5: i64 timestamp       // 订单生成时间
+  1: i32 code,                // 状态码：0 成功，非 0 表示失败
+  2: string message,          // 描述信息
+  3: optional string orderId  // 生成的订单 ID（创建订单时返回）
 }
 
 service OrderService {
-  // 创建订单接口
+  // 创建订单：下单时调用 ReserveStock 预占库存
   OrderResp CreateOrder(1: OrderReq req),
-  // 查询订单接口
-  OrderQueryResponse QueryOrder(1: OrderQueryRequest req)
+  // 支付成功：调用 ConfirmDeductStock 确认扣减库存并更新订单状态
+  OrderResp ConfirmOrder(1: string orderId),
+  // 取消订单（含超时、用户取消）：调用 RollbackStock 回滚库存，并更新订单状态为取消
+  OrderResp CancelOrder(1: string orderId),
+  // 查询订单状态
+  OrderResp QueryOrder(1: string orderId)
 }

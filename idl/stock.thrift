@@ -19,7 +19,7 @@ service StockService {
   // 查询库存接口
   StockResp QueryStock(1: StockReq req),
 
-  // 预扣库存接口（扣减库存）
+  // 直接扣减库存
   StockResp PreDeductStock(1: StockReq req),
 
   // 库存回滚接口（库存补偿）
