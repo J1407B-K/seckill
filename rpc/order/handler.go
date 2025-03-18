@@ -80,16 +80,20 @@ func (s *OrderServiceImpl) ConfirmOrder(ctx context.Context, orderId string) (re
 
 	//扣减库存
 	stockReq := &stock.StockReq{
-		ProductId: fmt.Sprintf("%d", o.ProductID), // Assuming ProductID is int, convert to string if needed
+		ProductId: o.ProductID,
 		Count:     int32(o.Count),
 	}
 
-	// 调用扣减库存接口
+	log.Printf("Attempting to pre-deduct stock for ProductID: %s, Count: %d", o.ProductID, o.Count)
 	stockResp, err := s.stockCli.PreDeductStock(ctx, stockReq)
 	if err != nil || stockResp.Code != 0 {
-		// 库存扣减失败，释放预占库存并返回错误
+		log.Printf("PreDeductStock failed for ProductID: %s, Count: %d, Error: %v", o.ProductID, o.Count, err)
+
+		// 释放库存
+		log.Printf("Attempting to release reserved stock for ProductID: %s, Count: %d", o.ProductID, o.Count)
 		releaseResp, releaseErr := s.stockCli.ReleaseStock(ctx, stockReq)
 		if releaseErr != nil || releaseResp.Code != 0 {
+			log.Printf("ReleaseStock failed for ProductID: %s, Count: %d, Error: %v", o.ProductID, o.Count, releaseErr)
 			return &order.OrderResp{Code: 3, Message: "库存扣减失败，且释放库存失败"}, releaseErr
 		}
 		return &order.OrderResp{Code: 3, Message: "库存扣减失败，订单无法支付"}, err
@@ -122,7 +126,7 @@ func (s *OrderServiceImpl) CancelOrder(ctx context.Context, orderId string) (res
 	if o.Status == 1 {
 		// 执行回滚库存操作
 		stockReq := &stock.StockReq{
-			ProductId: fmt.Sprintf("%d", o.ProductID),
+			ProductId: o.ProductID,
 			Count:     int32(o.Count),
 		}
 
@@ -144,7 +148,7 @@ func (s *OrderServiceImpl) CancelOrder(ctx context.Context, orderId string) (res
 	// 如果订单未支付，直接释放预占库存
 	if o.Status == 0 {
 		stockReq := &stock.StockReq{
-			ProductId: fmt.Sprintf("%d", o.ProductID),
+			ProductId: o.ProductID,
 			Count:     int32(o.Count),
 		}
 

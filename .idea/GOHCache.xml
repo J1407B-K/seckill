@@ -398,7 +398,7 @@
         <entry key="file://$PROJECT_DIR$/api/api.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742201714282" />
+              <option name="lastModified" value="1742209831737" />
             </ScannedPath>
           </value>
         </entry>
@@ -419,7 +419,7 @@
         <entry key="file://$PROJECT_DIR$/handler/handler.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742204788897" />
+              <option name="lastModified" value="1742276146228" />
             </ScannedPath>
           </value>
         </entry>
@@ -746,7 +746,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/order/handler.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742200006888" />
+              <option name="lastModified" value="1742276775024" />
               <option name="schema">
                 <list>
                   <option value="OrderServiceImpl" />
@@ -845,7 +845,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/stock/handler.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742199194540" />
+              <option name="lastModified" value="1742276998181" />
               <option name="schema">
                 <list>
                   <option value="StockServiceImpl" />
@@ -995,7 +995,7 @@
         <entry key="file://$PROJECT_DIR$/utils/jwt.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742205464959" />
+              <option name="lastModified" value="1742211313819" />
             </ScannedPath>
           </value>
         </entry>
@@ -1003,6 +1003,13 @@
           <value>
             <ScannedPath>
               <option name="lastModified" value="1742203235976" />
+            </ScannedPath>
+          </value>
+        </entry>
+        <entry key="file://$PROJECT_DIR$/utils/pac.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742206527303" />
             </ScannedPath>
           </value>
         </entry>

@@ -95,8 +95,8 @@ func Login(c context.Context, ctx *app.RequestContext) (interface{}, error) {
 func CreateOrder(c context.Context, ctx *app.RequestContext) {
 	var co model.CreateOrder
 
-	userid, ok := ctx.Get("userid")
-	userinfo := userid.(*model.User)
+	user, ok := ctx.Get("userid")
+	userinfo := user.(*model.User)
 	err := ctx.BindJSON(&co)
 	if err != nil {
 		ctx.JSON(http.StatusBadGateway, utils.H{
@@ -113,7 +113,7 @@ func CreateOrder(c context.Context, ctx *app.RequestContext) {
 		ctx.JSON(http.StatusInternalServerError, utils.H{
 			"resp": model.Response{
 				Code: http.StatusInternalServerError,
-				Msg:  "Get userid error",
+				Msg:  "Get user error",
 				Data: "nil",
 			},
 		})
@@ -157,9 +157,17 @@ func ConfirmOrder(c context.Context, ctx *app.RequestContext) {
 
 	confirmOrderResp, err := global.Clients.OrderClient.ConfirmOrder(c, co.OrderId)
 	if err != nil {
+		ctx.JSON(http.StatusInternalServerError, utils.H{
+			"resp": model.Response{
+				Code: http.StatusInternalServerError,
+				Msg:  err.Error(),
+				Data: "nil",
+			},
+		})
 		return
 	}
 
+	fmt.Println(confirmOrderResp)
 	ctx.JSON(http.StatusOK, utils.H{
 		"resp": model.Response{
 			Code: 0,
