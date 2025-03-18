@@ -24,7 +24,7 @@ func (s *StockServiceImpl) QueryStock(ctx context.Context, req *stock.StockReq) 
 	// 将产品ID转换为整数
 	productId, err := strconv.Atoi(req.ProductId)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("产品ID格式错误: %v", err)
 	}
 
 	// 统一使用 key "stock:productId" 存储商品库存
@@ -32,13 +32,14 @@ func (s *StockServiceImpl) QueryStock(ctx context.Context, req *stock.StockReq) 
 	productStock := dao.RedisSearchStock(s.rdb, productId)
 	// 如果 Redis 中未命中，则回退到 MySQL 查询
 	if productStock == "" {
-		productStock = string(dao.MysqlSearchStock(s.db, productId).Stock)
+		// 应使用 strconv.Itoa
+		productStock = strconv.Itoa(int(dao.MysqlSearchStock(s.db, productId).Stock))
 	}
 
 	// 将库存字符串转换为整数
 	intStock, err := strconv.Atoi(productStock)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("库存转换错误: %v", err)
 	}
 	finStock := int32(intStock)
 	return &stock.StockResp{Code: 0, Message: "ok", RemainingStock: &finStock}, nil
@@ -46,18 +47,14 @@ func (s *StockServiceImpl) QueryStock(ctx context.Context, req *stock.StockReq) 
 
 // PreDeductStock implements the StockServiceImpl interface.
 func (s *StockServiceImpl) PreDeductStock(ctx context.Context, req *stock.StockReq) (resp *stock.StockResp, err error) {
-	// 将产品ID转换为整数
 	productId, err := strconv.Atoi(req.ProductId)
 	if err != nil {
 		return nil, fmt.Errorf("产品ID格式错误: %v", err)
 	}
 
-	// 定义预留库存的 key，例如 reserved:1
 	reservedKey := fmt.Sprintf("reserved:%d", productId)
-	// 为了防止并发修改，构造分布式锁的 key
 	lockKey := fmt.Sprintf("lock:%s", reservedKey)
 
-	// 获取分布式锁，确保同一时刻只有一个进程在修改预留库存
 	mutex := s.redsync.NewMutex(lockKey,
 		redsync.WithExpiry(5*time.Second),
 		redsync.WithTries(3),
@@ -71,30 +68,7 @@ func (s *StockServiceImpl) PreDeductStock(ctx context.Context, req *stock.StockR
 		}
 	}()
 
-	// Lua 脚本：
-	// 1. 获取 reservedKey 中当前的预留库存（可能为 0）。
-	// 2. 如果预留库存为 nil 或不足扣减数量，则返回 -1 表示库存不足。
-	// 3. 否则，扣减指定数量，并返回扣减后的剩余库存。
-	luaScript := `
-        local key = KEYS[1]
-        local deduct = tonumber(ARGV[1])
-        local current = tonumber(redis.call("GET", key))
-        if current == nil or current < deduct then
-            return -1
-        end
-        return redis.call("DECRBY", key, deduct)
-    `
-	result, err := s.rdb.Eval(ctx, luaScript, []string{reservedKey}, req.Count).Result()
-	if err != nil {
-		return nil, fmt.Errorf("执行 Redis Lua 脚本失败: %v", err)
-	}
-	// 如果返回 -1，则说明 reservedKey 中的预留库存不足
-	if result.(int64) == -1 {
-		return &stock.StockResp{Code: 1, Message: "预订库存不足"}, nil
-	}
-	remaining := int32(result.(int64))
-
-	// 同步更新 MySQL 中的库存
+	// 先更新 MySQL
 	tx := s.db.Begin()
 	if err := tx.Exec("UPDATE product_stocks SET stock = stock - ? WHERE product_id = ?", req.Count, productId).Error; err != nil {
 		tx.Rollback()
@@ -104,6 +78,31 @@ func (s *StockServiceImpl) PreDeductStock(ctx context.Context, req *stock.StockR
 		return nil, fmt.Errorf("提交事务失败: %v", err)
 	}
 
+	// 然后扣减 Redis reserved
+	luaScript := `
+        local key = KEYS[1]
+        local deduct = tonumber(ARGV[1])
+        local current = tonumber(redis.call("GET", key))
+        if current == nil or current < deduct then
+            return -1
+        end
+        local newStock = current - deduct
+        if newStock < 0 then
+            return -1
+        end
+        redis.call("SET", key, newStock)
+        return newStock
+    `
+
+	result, err := s.rdb.Eval(ctx, luaScript, []string{reservedKey}, req.Count).Result()
+	if err != nil {
+		return nil, fmt.Errorf("执行 Redis Lua 脚本失败: %v", err)
+	}
+	if result.(int64) == -1 {
+		return &stock.StockResp{Code: 1, Message: "预订库存不足"}, nil
+	}
+	remaining := int32(result.(int64))
+
 	return &stock.StockResp{Code: 0, Message: "预扣库存成功", RemainingStock: &remaining}, nil
 }
 
@@ -112,7 +111,7 @@ func (s *StockServiceImpl) RollbackStock(ctx context.Context, req *stock.StockRe
 	// 将产品ID转换为整数
 	productId, err := strconv.Atoi(req.ProductId)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("产品ID格式错误: %v", err)
 	}
 
 	// 统一使用 key "stock:%d" 存储商品库存
@@ -133,11 +132,11 @@ func (s *StockServiceImpl) RollbackStock(ctx context.Context, req *stock.StockRe
 	luaScript := `
         local key = KEYS[1]
         local rollback = tonumber(ARGV[1])
-        local stock = tonumber(redis.call("get", key))
+        local stock = tonumber(redis.call("GET", key))
         if stock == nil then
             return -1
         end
-        return redis.call("incrby", key, rollback)
+        return redis.call("INCRBY", key, rollback)
     `
 	result, err := s.rdb.Eval(ctx, luaScript, []string{redisKey}, req.Count).Result()
 	if err != nil {
@@ -167,10 +166,10 @@ func (s *StockServiceImpl) ReserveStock(ctx context.Context, req *stock.StockReq
 	// 将产品ID转换为整数
 	productId, err := strconv.Atoi(req.ProductId)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("产品ID格式错误: %v", err)
 	}
 
-	// 统一使用 key "stock:%d" 存储主库存，避免因 key 命名不一致而引发的问题
+	// 统一使用 key "stock:%d" 存储主库存
 	redisKey := fmt.Sprintf("stock:%d", productId)
 	// 构造用于分布式锁的 key
 	lockKey := fmt.Sprintf("lock:%s", redisKey)
@@ -184,22 +183,23 @@ func (s *StockServiceImpl) ReserveStock(ctx context.Context, req *stock.StockReq
 	}
 	defer mutex.UnlockContext(ctx)
 
-	// Lua 脚本：原子地检查库存是否足够并扣减 1 个单位
 	luaScript := `
-        local key = KEYS[1]
-        local stock = tonumber(redis.call("get", key))
-        if stock == nil or stock <= 0 then
-            return -1
-        end
-        redis.call("decrby", key, 1)
-        return stock - 1
-    `
-	result, err := s.rdb.Eval(ctx, luaScript, []string{redisKey}).Result()
+    local stockKey = KEYS[1]
+    local reservedKey = KEYS[2]
+    local stock = tonumber(redis.call("GET", stockKey))
+    if stock == nil or stock <= 0 then
+        return -1
+    end
+    redis.call("DECRBY", stockKey, 1)
+    redis.call("INCRBY", reservedKey, 1)
+    return stock - 1
+`
+	result, err := s.rdb.Eval(ctx, luaScript, []string{redisKey, fmt.Sprintf("reserved:%d", productId)}).Result()
 	if err != nil {
 		return nil, fmt.Errorf("执行 Redis Lua 脚本失败: %v", err)
 	}
 	// 当返回 -1 时，说明库存不足或 key 未初始化
-	if result == int64(-1) {
+	if result.(int64) == -1 {
 		return &stock.StockResp{Code: 1, Message: "库存不足，预占失败"}, nil
 	}
 
@@ -212,7 +212,7 @@ func (s *StockServiceImpl) ReleaseStock(ctx context.Context, req *stock.StockReq
 	// 将产品 ID 从字符串转换为整数
 	productId, err := strconv.Atoi(req.ProductId)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("产品ID格式错误: %v", err)
 	}
 
 	// 定义主库存 key 和预留库存 key（注意：两者需要统一管理）
@@ -231,10 +231,6 @@ func (s *StockServiceImpl) ReleaseStock(ctx context.Context, req *stock.StockReq
 	}
 	defer mutex.UnlockContext(ctx)
 
-	// 修改后的 Lua 脚本：
-	// 1. 先读取 reservedKey 的值，如果 reservedKey 为 nil，则说明库存数据未初始化，返回 -1；
-	// 2. 如果 reservedStock 小于等于 0，则说明当前没有预留库存需要释放，直接返回 0（视为成功）；
-	// 3. 否则，将 reservedKey 扣减 1，同时将 stockKey 加回 1，并返回 0 表示释放成功。
 	luaScript := `
         local stockKey = KEYS[1]
         local reservedKey = KEYS[2]
@@ -245,8 +241,8 @@ func (s *StockServiceImpl) ReleaseStock(ctx context.Context, req *stock.StockReq
         if reservedStock <= 0 then
             return 0
         end
-        redis.call("decrby", reservedKey, 1)
-        redis.call("incrby", stockKey, 1)
+        redis.call("DECRBY", reservedKey, 1)
+        redis.call("INCRBY", stockKey, 1)
         return 0
     `
 	// 执行 Lua 脚本，传入主库存和预留库存的 key

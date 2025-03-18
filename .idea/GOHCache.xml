@@ -3,13 +3,6 @@
   <component name="GoORMHelperCache">
     <option name="schemaMapping">
       <map>
-        <entry key="Claims">
-          <value>
-            <set>
-              <option value="file://$PROJECT_DIR$/utils/jwt.go" />
-            </set>
-          </value>
-        </entry>
         <entry key="Clients">
           <value>
             <set>
@@ -75,22 +68,7 @@
         <entry key="Order">
           <value>
             <set>
-              <option value="file://$PROJECT_DIR$/idl/kitex_gen/order/order.go" />
               <option value="file://$PROJECT_DIR$/rpc/order/model/model.go" />
-            </set>
-          </value>
-        </entry>
-        <entry key="OrderQueryRequest">
-          <value>
-            <set>
-              <option value="file://$PROJECT_DIR$/idl/kitex_gen/order/order.go" />
-            </set>
-          </value>
-        </entry>
-        <entry key="OrderQueryResponse">
-          <value>
-            <set>
-              <option value="file://$PROJECT_DIR$/idl/kitex_gen/order/order.go" />
             </set>
           </value>
         </entry>
@@ -381,13 +359,6 @@
           <value>
             <set>
               <option value="file://$PROJECT_DIR$/idl/kitex_gen/user/userservice/client.go" />
-            </set>
-          </value>
-        </entry>
-        <entry key="login">
-          <value>
-            <set>
-              <option value="file://$PROJECT_DIR$/utils/jwt.go" />
             </set>
           </value>
         </entry>
@@ -845,7 +816,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/stock/handler.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742276998181" />
+              <option name="lastModified" value="1742300107384" />
               <option name="schema">
                 <list>
                   <option value="StockServiceImpl" />
@@ -999,25 +970,10 @@
             </ScannedPath>
           </value>
         </entry>
-        <entry key="file://$PROJECT_DIR$/utils/middle.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1742203235976" />
-            </ScannedPath>
-          </value>
-        </entry>
-        <entry key="file://$PROJECT_DIR$/utils/pac.go">
-          <value>
-            <ScannedPath>
-              <option name="lastModified" value="1742206527303" />
-            </ScannedPath>
-          </value>
-        </entry>
       </map>
     </option>
     <option name="tableStructMapping">
       <map>
-        <entry key="claims" value="Claims" />
         <entry key="clients" value="Clients" />
         <entry key="cofirm_order" value="CofirmOrder" />
         <entry key="config" value="Config" />
@@ -1031,8 +987,6 @@
         <entry key="mysql_config" value="MysqlConfig" />
         <entry key="option" value="Option" />
         <entry key="order" value="Order" />
-        <entry key="order_query_request" value="OrderQueryRequest" />
-        <entry key="order_query_response" value="OrderQueryResponse" />
         <entry key="order_req" value="OrderReq" />
         <entry key="order_resp" value="OrderResp" />
         <entry key="order_service_cancel_order_args" value="OrderServiceCancelOrderArgs" />
@@ -1072,6 +1026,6 @@
         <entry key="user_service_register_result" value="UserServiceRegisterResult" />
       </map>
     </option>
-    <option name="lastTimeChecked" value="1742191895747" />
+    <option name="lastTimeChecked" value="1742298667868" />
   </component>
 </project>
