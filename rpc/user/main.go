@@ -15,6 +15,8 @@ func main() {
 	initialize.SetupViper()
 	db := initialize.InitGormDB()
 
+	initialize.InitTracer()
+
 	option := flag.Parse()
 	ok := flag.DBOption(db, option)
 	if !ok {

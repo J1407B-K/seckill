@@ -1,31 +1,12 @@
 package initialize
 
 import (
-	"github.com/cloudwego/kitex/client"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/exporters/jaeger"
 	"go.opentelemetry.io/otel/sdk/resource"
 	"go.opentelemetry.io/otel/sdk/trace"
 	semconv "go.opentelemetry.io/otel/semconv/v1.23.0"
-	"seckill/global"
-	"seckill/idl/kitex_gen/order/orderservice"
-	"seckill/idl/kitex_gen/user/userservice"
 )
-
-func InitNewClient() error {
-	uc, err := userservice.NewClient("userservice", client.WithResolver(*global.Resolver))
-	if err != nil {
-		panic(err)
-	}
-	global.Clients.UserClient = uc
-
-	oc, err := orderservice.NewClient("orderservice", client.WithResolver(*global.Resolver))
-	if err != nil {
-		panic(err)
-	}
-	global.Clients.OrderClient = oc
-	return nil
-}
 
 func InitTracer() {
 	exp, err := jaeger.New(jaeger.WithCollectorEndpoint(jaeger.WithEndpoint("http://localhost:14268/traces")))
@@ -37,7 +18,7 @@ func InitTracer() {
 		trace.WithBatcher(exp),
 		trace.WithResource(resource.NewWithAttributes(
 			semconv.SchemaURL,
-			semconv.ServiceNameKey.String("client"),
+			semconv.ServiceNameKey.String("stockservice"),
 		)),
 	)
 	otel.SetTracerProvider(tp)

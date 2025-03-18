@@ -178,21 +178,20 @@ func ConfirmOrder(c context.Context, ctx *app.RequestContext) {
 }
 
 func QueryOrder(c context.Context, ctx *app.RequestContext) {
-	var co model.CofirmOrder
-
-	err := ctx.BindJSON(&co)
-	if err != nil {
-		ctx.JSON(http.StatusBadGateway, utils.H{
+	user, ok := ctx.Get("userid")
+	userinfo := user.(*model.User)
+	if !ok {
+		ctx.JSON(http.StatusInternalServerError, utils.H{
 			"resp": model.Response{
-				Code: http.StatusBadGateway,
-				Msg:  err.Error(),
+				Code: http.StatusInternalServerError,
+				Msg:  "Get user error",
 				Data: "nil",
 			},
 		})
 		return
 	}
 
-	qo, err := global.Clients.OrderClient.QueryOrder(c, co.OrderId)
+	qo, err := global.Clients.OrderClient.QueryOrder(c, userinfo.UserId)
 	if err != nil {
 		return
 	}

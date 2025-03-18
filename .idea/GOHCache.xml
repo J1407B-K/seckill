@@ -390,7 +390,7 @@
         <entry key="file://$PROJECT_DIR$/handler/handler.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742276146228" />
+              <option name="lastModified" value="1742311887105" />
             </ScannedPath>
           </value>
         </entry>
@@ -640,7 +640,7 @@
         <entry key="file://$PROJECT_DIR$/model/order.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742201713779" />
+              <option name="lastModified" value="1742311621533" />
               <option name="schema">
                 <list>
                   <option value="CreateOrder" />
@@ -717,7 +717,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/order/handler.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742276775024" />
+              <option name="lastModified" value="1742312032373" />
               <option name="schema">
                 <list>
                   <option value="OrderServiceImpl" />
@@ -816,7 +816,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/stock/handler.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742300107384" />
+              <option name="lastModified" value="1742300134588" />
               <option name="schema">
                 <list>
                   <option value="StockServiceImpl" />

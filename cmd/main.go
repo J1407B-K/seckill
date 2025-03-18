@@ -20,5 +20,7 @@ func main() {
 		panic(err)
 	}
 
+	initialize.InitTracer()
+
 	api.InitRouter()
 }

@@ -21,6 +21,8 @@ func main() {
 		log.Println("未自动建表")
 	}
 
+	initialize.InitTracer()
+
 	r, err := etcd.NewEtcdRegistry([]string{"127.0.0.1:2379"})
 	if err != nil {
 		log.Fatal(err)

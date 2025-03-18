@@ -11,7 +11,6 @@ import (
 	"seckill/idl/kitex_gen/stock"
 	"seckill/idl/kitex_gen/stock/stockservice"
 	"seckill/rpc/order/model"
-	"strconv"
 	"time"
 )
 
@@ -173,9 +172,15 @@ func (s *OrderServiceImpl) CancelOrder(ctx context.Context, orderId string) (res
 
 // QueryOrder implements the OrderServiceImpl interface.
 func (s *OrderServiceImpl) QueryOrder(ctx context.Context, orderId string) (resp *order.OrderResp, err error) {
-	var o model.Order
-	if err := s.db.Where("order_id = ?", orderId).First(&o).Error; err != nil {
+	var o []model.Order
+	var order_ids string
+	if err := s.db.Where("user_id = ?", orderId).Find(&o).Error; err != nil {
 		return &order.OrderResp{Code: 1, Message: "订单不存在"}, err
 	}
-	return &order.OrderResp{Code: 0, Message: o.ProductID + "		" + strconv.Itoa(o.Count) + "	 " + strconv.Itoa(o.Status)}, nil
+	for _, v := range o {
+		if v.Status == 0 {
+			order_ids += v.OrderID + "	"
+		}
+	}
+	return &order.OrderResp{Code: 0, Message: order_ids}, nil
 }

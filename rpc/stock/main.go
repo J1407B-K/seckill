@@ -17,6 +17,8 @@ func main() {
 	rdb := initialize.InitRedisDB()
 	redsync := initialize.InitRedisSync()
 
+	initialize.InitTracer()
+
 	option := flag.Parse()
 	ok := flag.DBOption(db, option)
 	if !ok {
