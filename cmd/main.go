@@ -22,5 +22,8 @@ func main() {
 
 	initialize.InitTracer()
 
+	global.Cv = initialize.InitPrometheus()
+	initialize.RegisterPromethus(global.Cv)
+
 	api.InitRouter()
 }

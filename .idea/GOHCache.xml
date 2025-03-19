@@ -376,7 +376,7 @@
         <entry key="file://$PROJECT_DIR$/cmd/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742015820557" />
+              <option name="lastModified" value="1742313327584" />
             </ScannedPath>
           </value>
         </entry>
@@ -621,7 +621,7 @@
         <entry key="file://$PROJECT_DIR$/initialize/initialize.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742200006686" />
+              <option name="lastModified" value="1742313327608" />
             </ScannedPath>
           </value>
         </entry>
@@ -726,6 +726,13 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/order/initialize/jaeger.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742313379233" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/rpc/order/initialize/mysql.go">
           <value>
             <ScannedPath>
@@ -743,7 +750,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/order/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742194954883" />
+              <option name="lastModified" value="1742313453698" />
             </ScannedPath>
           </value>
         </entry>
@@ -825,6 +832,13 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/stock/initialize/jaeger.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742313454125" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/rpc/stock/initialize/mysql.go">
           <value>
             <ScannedPath>
@@ -849,7 +863,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/stock/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742126643176" />
+              <option name="lastModified" value="1742313453751" />
             </ScannedPath>
           </value>
         </entry>
@@ -930,6 +944,13 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/user/initialize/jaeger.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742313492229" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/rpc/user/initialize/mysql.go">
           <value>
             <ScannedPath>
@@ -947,7 +968,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/user/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742022855377" />
+              <option name="lastModified" value="1742313492015" />
             </ScannedPath>
           </value>
         </entry>

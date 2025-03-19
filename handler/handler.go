@@ -2,9 +2,9 @@ package handler
 
 import (
 	"context"
-	"fmt"
 	"github.com/cloudwego/hertz/pkg/app"
 	"github.com/cloudwego/hertz/pkg/common/utils"
+	"github.com/prometheus/client_golang/prometheus"
 	"net/http"
 	"seckill/global"
 	"seckill/idl/kitex_gen/order"
@@ -42,6 +42,11 @@ func Register(c context.Context, ctx *app.RequestContext) {
 			},
 		})
 	}
+
+	global.Cv.With(prometheus.Labels{
+		"handler": "Register",
+		"method":  "POST",
+	})
 
 	ctx.JSON(http.StatusOK, utils.H{
 		"resp": model.Response{
@@ -81,6 +86,11 @@ func Login(c context.Context, ctx *app.RequestContext) (interface{}, error) {
 		})
 		return nil, nil
 	}
+
+	global.Cv.With(prometheus.Labels{
+		"handler": "Login",
+		"method":  "POST",
+	})
 
 	ctx.JSON(http.StatusOK, utils.H{
 		"resp": model.Response{
@@ -129,7 +139,10 @@ func CreateOrder(c context.Context, ctx *app.RequestContext) {
 		return
 	}
 
-	fmt.Println(createOrderResp)
+	global.Cv.With(prometheus.Labels{
+		"handler": "CreateOrder",
+		"method":  "POST",
+	})
 
 	ctx.JSON(http.StatusOK, utils.H{
 		"resp": model.Response{
@@ -167,7 +180,11 @@ func ConfirmOrder(c context.Context, ctx *app.RequestContext) {
 		return
 	}
 
-	fmt.Println(confirmOrderResp)
+	global.Cv.With(prometheus.Labels{
+		"handler": "ConfirmOrder",
+		"method":  "POST",
+	})
+
 	ctx.JSON(http.StatusOK, utils.H{
 		"resp": model.Response{
 			Code: 0,
@@ -195,6 +212,11 @@ func QueryOrder(c context.Context, ctx *app.RequestContext) {
 	if err != nil {
 		return
 	}
+
+	global.Cv.With(prometheus.Labels{
+		"handler": "QueryOrder",
+		"method":  "POST",
+	})
 
 	ctx.JSON(http.StatusOK, utils.H{
 		"resp": model.Response{

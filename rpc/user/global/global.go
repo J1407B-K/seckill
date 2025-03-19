@@ -1,6 +1,8 @@
 package global
 
-import "seckill/rpc/user/config"
+import (
+	"seckill/rpc/user/config"
+)
 
 var (
 	Config *config.Config
