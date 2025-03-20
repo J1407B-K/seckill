@@ -376,21 +376,21 @@
         <entry key="file://$PROJECT_DIR$/cmd/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742313327584" />
+              <option name="lastModified" value="1742366876487" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/global/global.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742015602746" />
+              <option name="lastModified" value="1742366876723" />
             </ScannedPath>
           </value>
         </entry>
         <entry key="file://$PROJECT_DIR$/handler/handler.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742311887105" />
+              <option name="lastModified" value="1742367128098" />
             </ScannedPath>
           </value>
         </entry>
@@ -621,7 +621,7 @@
         <entry key="file://$PROJECT_DIR$/initialize/initialize.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742313327608" />
+              <option name="lastModified" value="1742366147439" />
             </ScannedPath>
           </value>
         </entry>
@@ -710,7 +710,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/order/global/global.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742194696765" />
+              <option name="lastModified" value="1742367127802" />
             </ScannedPath>
           </value>
         </entry>
@@ -740,6 +740,13 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/order/initialize/prometheus.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742366684990" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/rpc/order/initialize/viper.go">
           <value>
             <ScannedPath>
@@ -750,7 +757,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/order/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742313453698" />
+              <option name="lastModified" value="1742367020909" />
             </ScannedPath>
           </value>
         </entry>
@@ -816,7 +823,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/stock/global/global.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742123403104" />
+              <option name="lastModified" value="1742367127790" />
             </ScannedPath>
           </value>
         </entry>
@@ -846,6 +853,13 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/stock/initialize/prometheus.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742366615836" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/rpc/stock/initialize/redis.go">
           <value>
             <ScannedPath>
@@ -863,7 +877,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/stock/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742313453751" />
+              <option name="lastModified" value="1742366989498" />
             </ScannedPath>
           </value>
         </entry>
@@ -921,7 +935,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/user/global/global.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742019121427" />
+              <option name="lastModified" value="1742367127778" />
             </ScannedPath>
           </value>
         </entry>
@@ -958,6 +972,13 @@
             </ScannedPath>
           </value>
         </entry>
+        <entry key="file://$PROJECT_DIR$/rpc/user/initialize/prometheus.go">
+          <value>
+            <ScannedPath>
+              <option name="lastModified" value="1742366615559" />
+            </ScannedPath>
+          </value>
+        </entry>
         <entry key="file://$PROJECT_DIR$/rpc/user/initialize/viper.go">
           <value>
             <ScannedPath>
@@ -968,7 +989,7 @@
         <entry key="file://$PROJECT_DIR$/rpc/user/main.go">
           <value>
             <ScannedPath>
-              <option name="lastModified" value="1742313492015" />
+              <option name="lastModified" value="1742367127818" />
             </ScannedPath>
           </value>
         </entry>
@@ -1047,6 +1068,6 @@
         <entry key="user_service_register_result" value="UserServiceRegisterResult" />
       </map>
     </option>
-    <option name="lastTimeChecked" value="1742298667868" />
+    <option name="lastTimeChecked" value="1742482718409" />
   </component>
 </project>
